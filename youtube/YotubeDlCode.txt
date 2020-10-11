@@ -1,0 +1,6 @@
+Download mp3
+$ youtube-dl -x --audio-format mp3 https://www.youtube.com/watch?v=7E-cwdnsiow
+Download just a video
+$ youtube-dl https://www.youtube.com/watch?v=7E-cwdnsiow
+Download links from a file
+$ youtube-dl -x --audio-format mp3 --batch-file=download.txt
