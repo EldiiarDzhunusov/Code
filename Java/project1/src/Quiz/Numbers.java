@@ -1,3 +1,4 @@
+//Write a Java program that accepts an integer ( n ) and computes the value of n+nn+nnn. In case of wrong input, you must print out text "error".
 package Quiz;
 
 import java.util.Scanner;
