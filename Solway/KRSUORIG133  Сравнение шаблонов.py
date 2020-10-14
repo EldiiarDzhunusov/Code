@@ -1,3 +1,4 @@
+//incomplete
 first =input("")
 second = input("")
 first = first.replace("?", "")
