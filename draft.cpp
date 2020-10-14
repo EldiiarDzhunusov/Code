@@ -1,15 +1,10 @@
-#include <iostream>
-#include <bits/stdc++.h>
-#define lli long long int
+
+#include<iostream>
 using namespace std;
-int sum(int a,int b);
-int main(){
-    cout<<"hello world!"<<endl;
-    int a,b;
-    cin>>a>>b;
-    cout<<sum(a,b)<<endl;
-    
-}
-int sum(int a, int b){
-	return a+b;
+int main()
+{
+	int a = max(1,2);
+	cout<<a<<endl;
+	
+
 }
