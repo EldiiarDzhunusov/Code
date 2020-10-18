@@ -1,18 +1,23 @@
-
-#include<iostream>
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
 using namespace std;
 int main()
 {
-	int ans = 0;
-	int array[100][150];
-	for (int column=0; column <100; column++){
-		for (int row=0; row <150; row++){
-			cin>>array[column][row];
-			if (array[column][row]<ans){
-				ans= array[column][row];
-			}
-		}
+	string str="hellohhhhello",sub="hello"; // str is string to search, sub is the substring to search for
+	
+	vector<size_t> positions; // holds all the positions that sub occurs within str
+	
+	size_t pos = str.find(sub, 0);
+	while(pos != string::npos)
+	{
+	    positions.push_back(pos);
+	    pos = str.find(sub,pos+1);
 	}
-	cout<<ans<<endl;		
+	for(int i=0; i < positions.size(); i++){
+		cout<<positions.at(i)<<endl;
+	}
+	
 }
 

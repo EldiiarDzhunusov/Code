@@ -1,0 +1,7 @@
+You can download it here (the download will start automatically once you open this link):
+ 
+https://osdn.net/projects/mingw/downloads/68260/mingw-get-setup.exe/
+ 
+You will also need to install IDE, I may suggest Dev-C++, you can download it by the following link:
+ 
+https://sourceforge.net/projects/orwelldevcpp/
