@@ -1,5 +1,7 @@
 package Google;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class MaximumCoins_7pts_8pts_ {
@@ -9,7 +11,7 @@ public class MaximumCoins_7pts_8pts_ {
         int caseNumber = 1;
         while (t > 0) {
             int size = scanner.nextInt();
-            int[][] arr = new int[size][size];
+            long[][] arr = new long[size][size];
             for (int i = 0; i < size; i++) {
                 for (int j = 0; j < size; j++) {
                     arr[i][j] = scanner.nextInt();
@@ -20,35 +22,38 @@ public class MaximumCoins_7pts_8pts_ {
             t--;
         }
     }
-
-    public static int solution(int[][] arr, int size) {
-        int ans = 0;
+    public static long solution(long[][] arr, int size) {
+        long ans = 0;
         for (int i = 0; i < size; i++) {
-            int down = 0;
+            long local = 0;
             int right = i;
-            int localMax = 0;
-            while(down<size && right<size){
-                localMax += arr[down][right];
-                right++;
+            int down = 0;
+            while(right<size){
+                local+= arr[down][right];
                 down++;
+                right++;
             }
-            if(localMax>ans){
-                ans = localMax;
+            if(local>ans){
+                ans=local;
             }
         }
         for (int i = 0; i < size; i++) {
-            int localMax = 0;
-            int down = i;
+            long local = 0;
             int right = 0;
-            while(down<size && right<size){
-                localMax += arr[down][right];
-                right++;
+            int down = i;
+            while(down<size){
+                local+= arr[down][right];
                 down++;
+                right++;
             }
-            if(localMax>ans){
-                ans = localMax;
+            if(local>ans){
+                ans=local;
             }
         }
-    return ans;
+
+
+        return ans;
     }
+
+
 }

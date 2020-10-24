@@ -1,8 +1,14 @@
 #include <stdio.h>
 
-
 int main(){
-	int a = 10;
-	int array[a];
-	printf("%d",sizeof(array));
+	const char m = 'M';
+	const int mAge = 18;
+	int sum = mAge + 10;
+	
+	printf("%d",sum);
+	
+	
+
+	
+	
 }

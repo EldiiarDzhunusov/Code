@@ -1,11 +1,12 @@
-list1 = []
-for i in range(100):
-    line = input("")
-    name = line.split(",")
-    for j in range(len(name)):
-        name[j]=int(name[j])
-        if name[j]%7==0:
-            list1.append(name[j])
-    
+f = open("input.txt", "r")
+ans = f.read()
+#To print the content of the whole file
+ans = ans.split(" ")
+a = int(ans[0])
+b = int(ans[1])
+answer = a+b
+answer = str(answer)
 
-print(min(list1))
+out = open("output.txt", "w")
+out.write(answer)
+

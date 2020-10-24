@@ -21,36 +21,19 @@ public class KickStart {
     public static void solution(String word) {
         int ans = 0;
         int size = word.length();
-        ArrayList kick = new ArrayList();
-        ArrayList start = new ArrayList();
-        String kick1 ="KICK";
-        for (int index = word.indexOf(kick1);
-             index >= 0;
-             index = word.indexOf(kick1, index + 1))
-        {
-            kick.add(index);
-        }
-        String start1= "START";
-        for (int index = word.indexOf(start1);
-             index >= 0;
-             index = word.indexOf(start1, index + 1))
-        {
-            start.add(index);
-        }
+        int kick = 0;
 
-
-
-
-        for (int i = 0; i < kick.size(); i++) {
-            for (int j = 0; j < start.size(); j++) {
-                int a = Integer.parseInt(kick.get(i).toString());
-                int b = Integer.parseInt(start.get(j).toString());
-                if(a < b ){
-                    ans++;
-                }
+        for (int i = 0; i < word.length()-4; i++) {
+            if(word.charAt(i)=='K' && word.charAt(i+1)=='I' && word.charAt(i+2)=='C' && word.charAt(i+3)=='K'){
+                kick+=1;
+            }
+            if(word.charAt(i)=='S' && word.charAt(i+1)=='T' && word.charAt(i+2)=='A' && word.charAt(i+3)=='R' && word.charAt(i+4)=='T'){
+                ans+=kick;
             }
         }
         System.out.println(ans);
+
+
 
     }
 }

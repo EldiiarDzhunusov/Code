@@ -8,18 +8,18 @@ int main(){
     while (t--) {
         int size;
         cin>>size;
-        int arr[size][size];
+        long long int arr[size][size];
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 cin>>arr[i][j];
             }
         }
-        int ans = 0;
+        long long int ans = 0;
 	    for (int i = 0; i < size; i++) {
 	        int down = 0;
 	        int right = i;
-	        int localMax = 0;
-	        while(down<size && right<size){
+	        long long int localMax = 0;
+	        while(right<size){
 	            localMax += arr[down][right];
 	            right++;
 	            down++;
@@ -29,7 +29,7 @@ int main(){
 	        }
 	    }
 	    for (int i = 0; i < size; i++) {
-	        int localMax = 0;
+	        long long int localMax = 0;
 	        int down = i;
 	        int right = 0;
 	        while(down<size && right<size){
@@ -37,6 +37,7 @@ int main(){
 	            right++;
 	            down++;
 	        }
+	        
 	        if(localMax>ans){
 	            ans = localMax;
 	        }
