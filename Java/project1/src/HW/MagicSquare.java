@@ -1,3 +1,5 @@
+package HW;
+
 import java.util.Scanner;
 
 public class MagicSquare {
@@ -54,6 +56,7 @@ public class MagicSquare {
             ans = false;
         }
         return ans;
+
 
 
 
