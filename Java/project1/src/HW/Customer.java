@@ -1,4 +1,4 @@
-package Quiz;
+package HW;
 
 public class Customer {
     private String firstName;
@@ -23,6 +23,14 @@ public class Customer {
         else{
             this.password = "DefaultPassword@20";
         }
+    }
+    public Customer(String firstName, String lastName, String address, String cardNumber, int pin, String username) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.cardNumber = cardNumber;
+        this.pin = pin;
+        this.username = username;
     }
 
     public String getFirstName() {
@@ -99,7 +107,7 @@ public class Customer {
                 ", address='" + address + '\'' +
                 ']';
     }
-    private boolean isValidPassword(String password){
+    public boolean isValidPassword(String password){
         boolean numChar=false;
         boolean lower=false;
         boolean upper=false;
@@ -125,4 +133,17 @@ public class Customer {
         return ( numChar && lower && upper && special && len);
 
     }
+    public String generatePassword(){
+        String password = "";
+        password +=Character.toString((char) Math.random() * (58 - 48 + 1) + 48); //numeric
+        password += "_";
+        password +=Character.toString((char) Math.random() * (91 - 65 + 1) + 65);
+        password +=Character.toString((char) Math.random() * (38 - 35 + 1) + 35);
+        while(password.length()<12){
+            password += Character.toString((char) Math.random() * (123 - 97 + 1) + 97);
+        }
+
+        return password;
+    }
 }
+

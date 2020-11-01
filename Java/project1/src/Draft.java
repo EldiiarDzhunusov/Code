@@ -1,17 +1,11 @@
 
-import java.util.ArrayList;
-import java.util.Scanner;
+import HW.Customer;
 
 public class Draft {
     public static void main(String[] args) {
-        String word = "gwegawegweag";
-        
-
-    }
-    public static void text(String word){
-
-        System.out.println(142);
-
+        Customer customer = new Customer("Nurlan", "Shaidullaev", "Shaidullaev" , "Shaidullaev", 14,  "Shaidullaev");
+        customer.setPassword(customer.generatePassword());
+        System.out.println(customer.toString());
     }
 
 }
