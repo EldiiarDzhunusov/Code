@@ -1,11 +1,15 @@
 
 import HW.Customer;
 
+import java.util.Arrays;
+
 public class Draft {
     public static void main(String[] args) {
-        Customer customer = new Customer("Nurlan", "Shaidullaev", "Shaidullaev" , "Shaidullaev", 14,  "Shaidullaev");
-        customer.setPassword(customer.generatePassword());
-        System.out.println(customer.toString());
+        Ball ball = new Ball(12,3,5,6,87);
+        System.out.println(ball.toString());
+        System.out.println(ball.getXDelta());
+        ball.setXDelta(45);
+        System.out.println(ball.toString());
     }
 
 }
