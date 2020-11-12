@@ -5,9 +5,10 @@ import java.util.Arrays;
 
 public class Draft {
     public static void main(String[] args) {
-       String word= "       hello ";
-       word = word.trim();
-        System.out.println(word);
+       Time time = new Time();
+       time.setSeconds(50);
+        System.out.println(time.toString());
+        time.hour=50;
     }
 
 }
