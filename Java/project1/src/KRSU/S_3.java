@@ -8,7 +8,7 @@ public class S_3 {
 
 ////import java.util.Scanner;
 //
-////public class HW.Solution {
+////public class HW.temp.Solution {
 ////    public static void main(String[] args) {
 ////        Scanner scanner = new Scanner(System.in);
 ////        int machinesNeeded = scanner.nextInt();
@@ -24,7 +24,7 @@ public class S_3 {
 ////            }
 ////            minutes++;
 ////        }
-////        System.out.println("Time needed : "+minutes);
+////        System.out.println("temp.Time needed : "+minutes);
 ////        System.out.println("Minerals : "+minerals);
 ////    }
 ////}

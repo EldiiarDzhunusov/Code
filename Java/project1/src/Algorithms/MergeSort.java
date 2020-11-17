@@ -56,7 +56,7 @@ class MergeSort {
     }
 
     // Main function that sorts arr[l..r] using
-    // merge()
+    // temp.merge()
     void sort(int arr[], int l, int r)
     {
         if (l < r) {

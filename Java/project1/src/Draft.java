@@ -1,14 +1,14 @@
-
-import HW.Customer;
-
-import java.util.Arrays;
+import java.math.BigInteger;
+import java.util.Scanner;
 
 public class Draft {
     public static void main(String[] args) {
-       Time time = new Time();
-       time.setSeconds(50);
-        System.out.println(time.toString());
-        time.hour=50;
+        int n = 15;
+        double temp1 = (double)n/2;
+        System.out.println((int)Math.ceil(temp1));
+
+
+
     }
 
 }

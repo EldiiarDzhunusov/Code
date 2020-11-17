@@ -4,7 +4,7 @@ public class S_160 {
 }
 //import java.util.Scanner;
 
-//public class HW.Solution {
+//public class HW.temp.Solution {
 //    public static void main(String[] args) {
 //        Scanner scanner = new Scanner(System.in);
 //        int n = scanner.nextInt();

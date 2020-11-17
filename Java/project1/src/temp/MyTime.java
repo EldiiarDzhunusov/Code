@@ -1,3 +1,5 @@
+package temp;
+
 public class MyTime {
     private int hour = 0;
     private int minute = 0;

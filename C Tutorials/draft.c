@@ -1,11 +1,16 @@
 #include <stdio.h>
 #include <math.h>
+#include <string.h>
+#include <ctype.h>
+
 int main () {
-	int number;
-	printf("Enter a number: ");
-	scanf("%d",&number);
-	int *ptrNumber = &number;
-	double ans = sqrt(*ptrNumber);
-	printf("The square root of a number %d is %0.2lf",*ptrNumber,ans);
+	char initial[100] = "World is a good place to live!";
+	printf("Initial string is \"%s\"\n",initial);
+	printf("Enter a new string: ");
+	char word[100];
+	scanf("%[^\n]", word);
+	
+	strcpy(initial,word);
+	printf("The word has been replaced to: \"%s\"\n",initial);
 }
 	

@@ -1,3 +1,5 @@
+package temp;
+
 public class Ball {
     private float y;
     private float x;
@@ -65,7 +67,7 @@ public class Ball {
 
     @Override
     public String toString() {
-        String s = String.format("Ball[(%f,%f),speed=(%f,%f)]",x,y,xDelta,yDelta);
+        String s = String.format("temp.Ball[(%f,%f),speed=(%f,%f)]",x,y,xDelta,yDelta);
         return s;
     }
 }

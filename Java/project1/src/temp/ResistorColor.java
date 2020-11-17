@@ -1,4 +1,4 @@
-
+package temp;
 
 public class ResistorColor {
     public int colorCode(String color) {
