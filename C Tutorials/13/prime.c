@@ -18,7 +18,6 @@ int prime(int n){
 		if(isprime(ans)==1){
 			counter++;
 		}
-		
 	}
 	return ans;
 }
