@@ -1,10 +1,14 @@
 #include <stdio.h>
-#ifndef lli
-	#define lli long long int
-#endif
-int main ()
-{
-   lli number = 10;
-   printf("%d\n",number);
-   return 0;
+
+extern x = 10;
+void funct(){
+	printf("Extern x: %d\n",x);
 }
+void main()
+{
+	int x = 15;
+	funct();
+	printf("Local x: %d\n",x);
+	
+}
+
