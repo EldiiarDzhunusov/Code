@@ -1,3 +1,5 @@
+package HW;
+
 public class Time {
     public int hour;
     private int minute;

@@ -54,7 +54,7 @@ public class Book {
             }
         }
 
-        return "Quiz.Book[" +
+        return "Quiz.HW.Book[" +
                 "name=" + name +
                 ",authors={" +
                 ans +

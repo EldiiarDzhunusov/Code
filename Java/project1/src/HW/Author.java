@@ -1,3 +1,5 @@
+package HW;
+
 public class Author {
     private String name;
     private String email;
@@ -28,7 +30,7 @@ public class Author {
 
     @Override
     public String toString() {
-        return "Author[" +
+        return "HW.Author[" +
                 "name=" + name +
                 ",email=" + email +
                 ",gender=" + gender +

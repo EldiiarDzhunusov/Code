@@ -1,3 +1,5 @@
+package HW;
+
 public class MyDate {
     //not finished
     private int year;

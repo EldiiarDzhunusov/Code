@@ -1,3 +1,5 @@
+package HW;
+
 public class Book {
     private String name;
     private Author[] authors;
@@ -53,7 +55,7 @@ public class Book {
             author+=authors[i].toString();
 
         }
-        return "Book[" +
+        return "HW.Book[" +
                 "name='" + name + '\'' +
                 "," + author+
                 ",price=" + price +

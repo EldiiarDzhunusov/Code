@@ -24,7 +24,7 @@ public class S_3 {
 ////            }
 ////            minutes++;
 ////        }
-////        System.out.println("Time needed : "+minutes);
+////        System.out.println("HW.Time needed : "+minutes);
 ////        System.out.println("Minerals : "+minerals);
 ////    }
 ////}

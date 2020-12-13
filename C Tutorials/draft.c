@@ -1,14 +1,12 @@
-#include <stdio.h>
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<ctype.h>
 
-extern x = 10;
-void funct(){
-	printf("Extern x: %d\n",x);
+int main() {
+	char a;
+    scanf("%c",&a);
+    if(isdigit(a)){
+    	printf("hello");
+	}
 }
-void main()
-{
-	int x = 15;
-	funct();
-	printf("Local x: %d\n",x);
-	
-}
-

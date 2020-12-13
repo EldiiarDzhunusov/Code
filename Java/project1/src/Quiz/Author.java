@@ -29,7 +29,7 @@ public class Author {
 
     @Override
     public String toString() {
-        return "Quiz.Author[" +
+        return "Quiz.HW.Author[" +
                 "name=" + name +
                 ",email=" + email +
                 ",gender=" + gender +
