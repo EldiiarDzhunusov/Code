@@ -1,4 +1,4 @@
-package Quiz;
+package Done;
 
 public class Author {
     private String name;
@@ -8,9 +8,10 @@ public class Author {
     public Author(String name, String email, char gender) {
         this.name = name;
         this.email = email;
-        this.gender = gender;
+        if(Character.compare(gender,'m')==0 || Character.compare(gender,'f')==0 ){
+            this.gender = gender;
+        }
     }
-
     public String getName() {
         return name;
     }
@@ -19,17 +20,17 @@ public class Author {
         return email;
     }
 
-    public char getGender() {
-        return gender;
-    }
-
     public void setEmail(String email) {
         this.email = email;
     }
 
+    public char getGender() {
+        return gender;
+    }
+
     @Override
     public String toString() {
-        return "Quiz.Done.Author[" +
+        return "Done.Author[" +
                 "name=" + name +
                 ",email=" + email +
                 ",gender=" + gender +

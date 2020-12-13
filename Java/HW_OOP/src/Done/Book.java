@@ -1,10 +1,10 @@
-package Quiz;
+package Done;
 
 public class Book {
     private String name;
     private Author[] authors;
     private double price;
-    private int qty=0;
+    private int qty =0;
 
     public Book(String name, Author[] authors, double price) {
         this.name = name;
@@ -24,7 +24,7 @@ public class Book {
     }
 
     public Author[] getAuthors() {
-        return this.authors;
+        return authors;
     }
 
     public double getPrice() {
@@ -45,31 +45,32 @@ public class Book {
 
     @Override
     public String toString() {
-        String ans = "";
-        if(authors.length>0){
-            ans+=authors[0].toString();
-            for (int i = 1; i < authors.length; i++) {
-                ans+=",";
-                ans+=authors[i].toString();
+        String author = "authors={";
+        int cond = 0;
+        for (int i = 0; i < authors.length; i++) {
+            if(cond!=0){
+                author+=",";
             }
-        }
+            cond=1;
+            author+=authors[i].toString();
 
-        return "Quiz.Done.Book[" +
-                "name=" + name +
-                ",authors={" +
-                ans +
-                "},price=" + price +
+        }
+        return "Done.Book[" +
+                "name='" + name + '\'' +
+                "," + author+
+                ",price=" + price +
                 ",qty=" + qty +
                 ']';
     }
-    public String getAuthorNames(){
-        String ans= "";
-        if(authors.length>0){
-            ans+=authors[0];
-            for (int i = 1; i < authors.length; i++) {
+    public String getAuthorsNames(){
+        String ans="";
+        int cond = 0;
+        for (int i = 0; i < authors.length; i++) {
+            if(cond!=0){
                 ans+=",";
-                ans+=authors[i];
             }
+            cond=1;
+            ans+=authors[i].getName();
         }
         return ans;
     }
