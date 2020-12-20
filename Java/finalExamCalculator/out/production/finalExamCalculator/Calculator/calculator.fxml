@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<GridPane alignment="center" hgap="8.0" maxHeight="1.7976931348623157E308" prefHeight="217.0" prefWidth="440.0" style="-fx-background-color: 2;" vgap="5.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Calculator.Controller">
+  <rowConstraints>
+    <RowConstraints maxHeight="60.0" minHeight="0.0" prefHeight="46.0" />
+    <RowConstraints maxHeight="60.0" minHeight="0.0" prefHeight="28.0" />
+    <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="25.0" />
+    <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="26.0" />
+    <RowConstraints maxHeight="37.0" minHeight="0.0" prefHeight="23.0" />
+    <RowConstraints maxHeight="49.0" minHeight="10.0" prefHeight="32.0" />
+  </rowConstraints>
+  <columnConstraints>
+    <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <children>
+    <Text fx:id="tipTextField" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="98.7294921875" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+    <Text fx:id="bmiText" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="98.7294921875" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+    <Text fx:id="screen" fill="#0a0a0a" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="414.7294921875" />
+    <Button mnemonicParsing="false" onAction="#buttonController" prefHeight="26.0" prefWidth="98.0" text="C" textFill="#61004b" GridPane.rowIndex="1">
+         <font>
+            <Font name="Berlin Sans FB" size="15.0" />
+         </font></Button>
+    <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonController" prefHeight="26.0" prefWidth="98.0" text="7" textFill="#da3f3f" GridPane.rowIndex="2">
+         <font>
+            <Font name="Berlin Sans FB" size="15.0" />
+         </font></Button>
+    <Button mnemonicParsing="false" onAction="#buttonController" prefHeight="26.0" prefWidth="98.0" text="+/-" textFill="#426f35" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <font>
+            <Font name="Berlin Sans FB" size="15.0" />
+         </font></Button>
+    <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonController" prefHeight="26.0" prefWidth="98.0" text="8" textFill="#da3f3f" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <font>
+            <Font name="Berlin Sans FB" size="15.0" />
+         </font></Button>
+    <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonController" prefHeight="26.0" prefWidth="98.0" text="5" textFill="#da3f3f" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <font>
+            <Font name="Berlin Sans FB" size="15.0" />
+         </font></Button>
+    <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonController" prefHeight="26.0" prefWidth="98.0" text="4" textFill="#da3f3f" GridPane.rowIndex="3">
+         <font>
+            <Font name="Berlin Sans FB" size="15.0" />
+         </font></Button>
+    <Button mnemonicParsing="false" onAction="#buttonController" prefHeight="26.0" prefWidth="98.0" text="." textFill="#426f35" GridPane.columnIndex="2" GridPane.rowIndex="5">
+         <font>
+            <Font name="Berlin Sans FB" size="15.0" />
+         </font></Button>
+    <Button mnemonicParsing="false" onAction="#buttonController" prefHeight="26.0" prefWidth="98.0" text="\%" textFill="#426f35" GridPane.columnIndex="2" GridPane.rowIndex="1">
+         <font>
+            <Font name="Berlin Sans FB" size="15.0" />
+         </font></Button>
+    <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonController" prefHeight="26.0" prefWidth="98.0" text="9" textFill="#da3f3f" GridPane.columnIndex="2" GridPane.rowIndex="2">
+         <font>
+            <Font name="Berlin Sans FB" size="15.0" />
+         </font></Button>
+    <Button mnemonicParsing="false" onAction="#buttonController" prefHeight="26.0" prefWidth="98.0" text="/" textFill="#426f35" GridPane.columnIndex="3" GridPane.rowIndex="1">
+         <font>
+            <Font name="Berlin Sans FB" size="15.0" />
+         </font></Button>
+    <Button mnemonicParsing="false" onAction="#buttonController" prefHeight="26.0" prefWidth="98.0" text="*" textFill="#426f35" GridPane.columnIndex="3" GridPane.rowIndex="2">
+         <font>
+            <Font name="Berlin Sans FB" size="15.0" />
+         </font></Button>
+    <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonController" prefHeight="26.0" prefWidth="98.0" text="6" textFill="#da3f3f" GridPane.columnIndex="2" GridPane.rowIndex="3">
+         <font>
+            <Font name="Berlin Sans FB" size="15.0" />
+         </font></Button>
+    <Button mnemonicParsing="false" onAction="#buttonController" prefHeight="26.0" prefWidth="98.0" text="-" textFill="#426f35" GridPane.columnIndex="3" GridPane.rowIndex="3">
+         <font>
+            <Font name="Berlin Sans FB" size="15.0" />
+         </font></Button>
+    <Button mnemonicParsing="false" onAction="#buttonController" prefHeight="26.0" prefWidth="98.0" text="+" textFill="#426f35" GridPane.columnIndex="3" GridPane.rowIndex="4">
+         <font>
+            <Font name="Berlin Sans FB" size="15.0" />
+         </font></Button>
+    <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonController" prefHeight="26.0" prefWidth="98.0" text="3" textFill="#da3f3f" GridPane.columnIndex="2" GridPane.rowIndex="4">
+         <font>
+            <Font name="Berlin Sans FB" size="15.0" />
+         </font></Button>
+    <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonController" prefHeight="26.0" prefWidth="98.0" text="2" textFill="#da3f3f" GridPane.columnIndex="1" GridPane.rowIndex="4">
+         <font>
+            <Font name="Berlin Sans FB" size="15.0" />
+         </font></Button>
+    <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonController" prefHeight="26.0" prefWidth="97.0" text="1" textFill="#da3f3f" GridPane.rowIndex="4">
+         <font>
+            <Font name="Berlin Sans FB" size="15.0" />
+         </font></Button>
+    <Button mnemonicParsing="false" onAction="#buttonController" prefHeight="26.0" prefWidth="98.0" text="=" textFill="#426f35" GridPane.columnIndex="3" GridPane.rowIndex="5">
+         <font>
+            <Font name="Berlin Sans FB" size="15.0" />
+         </font></Button>
+    <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonController" prefHeight="25.0" prefWidth="195.0" text="0" textFill="#da3f3f" GridPane.halignment="LEFT" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+         <font>
+            <Font name="Berlin Sans FB" size="15.0" />
+         </font>
+         <GridPane.margin>
+            <Insets left="10.0" />
+         </GridPane.margin></Button>
+  </children>
+   <effect>
+      <ColorAdjust contrast="0.02" hue="0.05" />
+   </effect>
+</GridPane>

@@ -1,0 +1,13 @@
+C:\Users\Junus\Desktop\MyCode\C#\project1\bin\Debug\netcoreapp3.1\project1.exe
+C:\Users\Junus\Desktop\MyCode\C#\project1\bin\Debug\netcoreapp3.1\project1.deps.json
+C:\Users\Junus\Desktop\MyCode\C#\project1\bin\Debug\netcoreapp3.1\project1.runtimeconfig.json
+C:\Users\Junus\Desktop\MyCode\C#\project1\bin\Debug\netcoreapp3.1\project1.runtimeconfig.dev.json
+C:\Users\Junus\Desktop\MyCode\C#\project1\bin\Debug\netcoreapp3.1\project1.dll
+C:\Users\Junus\Desktop\MyCode\C#\project1\bin\Debug\netcoreapp3.1\project1.pdb
+C:\Users\Junus\Desktop\MyCode\C#\project1\obj\Debug\netcoreapp3.1\project1.csprojAssemblyReference.cache
+C:\Users\Junus\Desktop\MyCode\C#\project1\obj\Debug\netcoreapp3.1\project1.AssemblyInfoInputs.cache
+C:\Users\Junus\Desktop\MyCode\C#\project1\obj\Debug\netcoreapp3.1\project1.AssemblyInfo.cs
+C:\Users\Junus\Desktop\MyCode\C#\project1\obj\Debug\netcoreapp3.1\project1.csproj.CoreCompileInputs.cache
+C:\Users\Junus\Desktop\MyCode\C#\project1\obj\Debug\netcoreapp3.1\project1.dll
+C:\Users\Junus\Desktop\MyCode\C#\project1\obj\Debug\netcoreapp3.1\project1.pdb
+C:\Users\Junus\Desktop\MyCode\C#\project1\obj\Debug\netcoreapp3.1\project1.genruntimeconfig.cache

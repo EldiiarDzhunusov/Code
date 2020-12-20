@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Junus\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Junus\\.nuget\\packages"
+    ]
+  }
+}
