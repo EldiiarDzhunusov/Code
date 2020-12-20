@@ -4,4 +4,4 @@ Images
 ![](img1.png)
 
 ## Image 2
-![](img/img2.png)
+![](img2.png)
