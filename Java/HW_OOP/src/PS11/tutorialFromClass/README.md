@@ -10,9 +10,9 @@ Made by Eldiiar Dzhunusov
 ### Run-> Edit Configuration -> modify options -> add vm options
 ### --module-path C:\javafx-sdk-11.0.2\lib --add-modules javafx.controls,javafx.fxml
 
-Add
-## Image 1
+
+## Screenshots
 ![](img1.png)
 
-## Image 2
+
 ![](img2.png)
