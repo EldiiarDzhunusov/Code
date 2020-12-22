@@ -79,7 +79,6 @@ public class tipCalculatorModificationController {
     }
     public void calculateAmount(){
         try{
-
             BigDecimal amount = new BigDecimal((amountTextField.getText()));
             BigDecimal tip = amount.multiply(tipPercentage);
             BigDecimal total = amount.add(tip);
