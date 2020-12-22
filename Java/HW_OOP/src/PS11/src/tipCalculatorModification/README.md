@@ -1,4 +1,4 @@
-# Painter
+# Modified Tip Calculator
 Made by Eldiiar Dzhunusov
 
 Modified Tip Calculator without "Calculate" button
