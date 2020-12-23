@@ -3,16 +3,18 @@ Made by Eldiiar Dzhunusov
 
 Paint Application with RGB colors
 
+## Download JavaFX:
+### https://gluonhq.com/products/javafx/
+
 ## Add JavaFX library:
-### Download JavaFX
-https://gluonhq.com/products/javafx/
-#### Ctrl+Shift+Alt+S
-#### Libraries -> add library 
-#### path->C:\javafx-sdk-11.0.2\lib (will depend)
+
+### Ctrl+Shift+Alt+S
+### Libraries -> add library 
+### path->C:\javafx-sdk-11.0.2\lib (will depend)
 
 ## Add VM Options:
-#### Run-> Edit Configuration -> modify options -> add vm options
-#### --module-path C:\javafx-sdk-11.0.2\lib --add-modules javafx.controls,javafx.fxml
+### Run-> Edit Configuration -> modify options -> add vm options
+### --module-path C:\javafx-sdk-11.0.2\lib --add-modules javafx.controls,javafx.fxml
 
 
 ## Screenshots
