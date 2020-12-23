@@ -1,16 +1,19 @@
 # BMI Calculator
 Made by Eldiiar Dzhunusov
 
-This program calculates BMI with Metric and English Systems.
+This program calculates Body-Mass-Index with Metric system and English Systems using weight and height.
+
+## Download the JavaFX SDK:
+#### https://gluonhq.com/products/javafx/
+
 ## Add JavaFX library:
-### Ctrl+Shift+Alt+S
-### Libraries -> add library 
-### path->C:\javafx-sdk-11.0.2\lib (will depend)
+
+#### File -> Project Structure -> Libraries -> add library 
+#### path->C:\javafx-sdk-11.0.2\lib (will depend)
 
 ## Add VM Options:
-### Run-> Edit Configuration -> modify options -> add vm options
-### --module-path C:\javafx-sdk-11.0.2\lib --add-modules javafx.controls,javafx.fxml
-
+#### Run-> Edit Configuration -> modify options -> add vm options
+#### --module-path %PATH_TO_JAVAFX_SDK/LIB% --add-modules javafx.controls,javafx.fxml 
 
 ## Screenshots
 ![](img1.png)
