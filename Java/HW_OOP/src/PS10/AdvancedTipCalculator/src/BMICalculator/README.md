@@ -1,7 +1,7 @@
 # BMI Calculator
 Made by Eldiiar Dzhunusov
 
-This program calculates Body-Mass-Index with Metric system and English Systems using weight and height.
+The program calculates Body-Mass-Index with Metric system and English Systems using weight and height.
 
 ## Download the JavaFX SDK:
 #### https://gluonhq.com/products/javafx/
