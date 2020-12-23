@@ -3,7 +3,7 @@ Made by Eldiiar Dzhunusov
 
 Paint Application with RGB colors
 
-## Download JavaFX:
+## Download the JavaFX SDK:
 ### https://gluonhq.com/products/javafx/
 
 ## Add JavaFX library:
