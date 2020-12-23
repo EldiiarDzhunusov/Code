@@ -1,4 +1,4 @@
-# Enhanced Tip Calculator
+# BMI Calculator
 Made by Eldiiar Dzhunusov
 
 This program calculates BMI with Metric and English Systems.
