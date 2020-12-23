@@ -1,7 +1,7 @@
-# Contacts App Modification
+# Color Chooser App Modification
 Made by Eldiiar Dzhunusov
 
-Modified Contacts with avatars
+Advanced Color Choser with vice versa feature
 
 ## Add JavaFX library:
 ### Ctrl+Shift+Alt+S

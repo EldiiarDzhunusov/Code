@@ -7,6 +7,8 @@ public class Contact {
     private String phoneNumber;
     private String image;
 
+    public Contact() {
+    }
 
     public Contact(String firstName, String lastName, String email, String phoneNumber, String image) {
         this.firstName = firstName;
@@ -14,9 +16,6 @@ public class Contact {
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.image = image;
-    }
-
-    public Contact() {
     }
 
     public String getFirstName() {
@@ -61,6 +60,6 @@ public class Contact {
 
     @Override
     public String toString() {
-        return lastName;
+        return getLastName();
     }
 }
