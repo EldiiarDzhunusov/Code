@@ -1,7 +1,7 @@
 # Painter
 Made by Eldiiar Dzhunusov
 
-Paint Application with RGB colors
+Paint Application with RGB colors and pen size
 
 ## Download the JavaFX SDK:
 #### https://gluonhq.com/products/javafx/
