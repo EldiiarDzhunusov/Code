@@ -1,7 +1,7 @@
-# Painter
+# Contacts App Modification
 Made by Eldiiar Dzhunusov
 
-Paint Application with RGB colors and pen size
+Advanced Contacts App with the profile pictures
 
 ## Download the JavaFX SDK:
 #### https://gluonhq.com/products/javafx/
@@ -15,7 +15,6 @@ Paint Application with RGB colors and pen size
 #### Run-> Edit Configuration -> modify options -> add vm options
 #### --module-path %PATH_TO_JAVAFX_SDK/LIB% --add-modules javafx.controls,javafx.fxml 
 
-
 ## Screenshots
 ![](img1.png)
 
@@ -26,3 +25,7 @@ Paint Application with RGB colors and pen size
 ---
 
 ![](img3.png)
+
+---
+
+![](img4.png)
