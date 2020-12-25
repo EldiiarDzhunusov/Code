@@ -1,4 +1,5 @@
-import org.junit.Ignore;
+package PS12;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -19,7 +20,7 @@ public class HandshakeCalculatorTest {
     @Test
     public void testThatInput1YieldsAWink() {
         assertEquals(
-                singletonList(Signal.WINK),
+                singletonList(HandshakeCalculator.Signal.WINK),
                 handshakeCalculator.calculateHandshake(1));
     }
 
@@ -27,7 +28,7 @@ public class HandshakeCalculatorTest {
     @Test
     public void testThatInput2YieldsADoubleBlink() {
         assertEquals(
-                singletonList(Signal.DOUBLE_BLINK),
+                singletonList(HandshakeCalculator.Signal.DOUBLE_BLINK),
                 handshakeCalculator.calculateHandshake(2));
     }
 
@@ -35,7 +36,7 @@ public class HandshakeCalculatorTest {
     @Test
     public void testThatInput4YieldsACloseYourEyes() {
         assertEquals(
-                singletonList(Signal.CLOSE_YOUR_EYES),
+                singletonList(HandshakeCalculator.Signal.CLOSE_YOUR_EYES),
                 handshakeCalculator.calculateHandshake(4));
     }
 
@@ -43,7 +44,7 @@ public class HandshakeCalculatorTest {
     @Test
     public void testThatInput8YieldsAJump() {
         assertEquals(
-                singletonList(Signal.JUMP),
+                singletonList(HandshakeCalculator.Signal.JUMP),
                 handshakeCalculator.calculateHandshake(8));
     }
 
@@ -51,7 +52,7 @@ public class HandshakeCalculatorTest {
     @Test
     public void testAnInputThatYieldsTwoActions() {
         assertEquals(
-                asList(Signal.WINK, Signal.DOUBLE_BLINK),
+                asList(HandshakeCalculator.Signal.WINK, HandshakeCalculator.Signal.DOUBLE_BLINK),
                 handshakeCalculator.calculateHandshake(3));
     }
 
@@ -59,7 +60,7 @@ public class HandshakeCalculatorTest {
     @Test
     public void testAnInputThatYieldsTwoReversedActions() {
         assertEquals(
-                asList(Signal.DOUBLE_BLINK, Signal.WINK),
+                asList(HandshakeCalculator.Signal.DOUBLE_BLINK, HandshakeCalculator.Signal.WINK),
                 handshakeCalculator.calculateHandshake(19));
     }
 
@@ -67,7 +68,7 @@ public class HandshakeCalculatorTest {
     @Test
     public void testReversingASingleActionYieldsTheSameAction() {
         assertEquals(
-                singletonList(Signal.JUMP),
+                singletonList(HandshakeCalculator.Signal.JUMP),
                 handshakeCalculator.calculateHandshake(24));
     }
 
@@ -82,7 +83,7 @@ public class HandshakeCalculatorTest {
     @Test
     public void testInputThatYieldsAllActions() {
         assertEquals(
-                asList(Signal.WINK, Signal.DOUBLE_BLINK, Signal.CLOSE_YOUR_EYES, Signal.JUMP),
+                asList(HandshakeCalculator.Signal.WINK, HandshakeCalculator.Signal.DOUBLE_BLINK, HandshakeCalculator.Signal.CLOSE_YOUR_EYES, HandshakeCalculator.Signal.JUMP),
                 handshakeCalculator.calculateHandshake(15));
     }
 
@@ -90,7 +91,7 @@ public class HandshakeCalculatorTest {
     @Test
     public void testInputThatYieldsAllActionsReversed() {
         assertEquals(
-                asList(Signal.JUMP, Signal.CLOSE_YOUR_EYES, Signal.DOUBLE_BLINK, Signal.WINK),
+                asList(HandshakeCalculator.Signal.JUMP, HandshakeCalculator.Signal.CLOSE_YOUR_EYES, HandshakeCalculator.Signal.DOUBLE_BLINK, HandshakeCalculator.Signal.WINK),
                 handshakeCalculator.calculateHandshake(31));
     }
 
