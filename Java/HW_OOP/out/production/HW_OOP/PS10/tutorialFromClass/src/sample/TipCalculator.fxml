@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane hgap="8.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="152.0" prefWidth="255.0" vgap="8.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.TipCalculatorController">
+<GridPane hgap="8.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="152.0" prefWidth="255.0" vgap="8.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PS10.tutorialFromClass.src.sample.TipCalculatorController">
    <columnConstraints>
       <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="119.0" minWidth="10.0" prefWidth="47.0" />
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="181.0" minWidth="0.0" prefWidth="180.0" />

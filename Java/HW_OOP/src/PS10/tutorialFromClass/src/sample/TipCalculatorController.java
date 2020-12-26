@@ -1,4 +1,4 @@
-package sample;
+package PS10.tutorialFromClass.src.sample;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
