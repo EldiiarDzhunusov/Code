@@ -4,16 +4,18 @@ namespace project1
 {
     class Program
     {
- 
         static void Main(string[] args)
         {
-            String.
-            int a = 10;
-            var b = 10;
-            Console.WriteLine(a);
-            Console.WriteLine(b);
-            Console.Write("Hello World!");
-            Console.WriteLine("heek");
-        }
+            int[] arr = new int[4] { 1, -2, 3, 4 };
+            foreach(int i in arr)
+            {
+                if (i >= 0)
+
+                {
+                    Console.Write($"{i} ");
+                }
+            }
+            Console.WriteLine();
+        }    
     }
 }

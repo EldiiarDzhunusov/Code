@@ -4,9 +4,7 @@
 #include<ctype.h>
 
 int main() {
-	char a;
-    scanf("%c",&a);
-    if(isdigit(a)){
-    	printf("hello");
-	}
+	const int a =10;
+	a=14;
+	printf("%d",a);
 }
