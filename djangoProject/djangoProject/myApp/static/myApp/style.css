@@ -1,0 +1,17 @@
+a:visited{
+    color:black;
+}
+a:first-child{
+    color:green !important;
+}
+header::after{
+    content : "ABC";
+}
+/*header{*/
+/*    display: flex;*/
+/*    flex-direction:column;*/
+/*}*/
+
+@media only screen and (max-width:1000px){
+    header{display: flex; flex-direction: column;}
+}

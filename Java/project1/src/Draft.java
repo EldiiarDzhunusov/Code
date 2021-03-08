@@ -10,6 +10,9 @@ public class Draft {
         for(ArrayList<Integer> x: arrayList){
             System.out.println(x);
         }
+        for (int i = 0; i < 10; i++) {
+            
+        }
     }
 
 

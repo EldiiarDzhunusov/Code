@@ -1,0 +1,22 @@
+{% extends 'myApp/base.html' %}
+{% block content %}
+{{ action.name }}
+<br>
+{{ action.create_date }}
+<br>
+    {{ action.status }}
+    <br>
+    <br>
+    <form action="{% url 'update_status' %}" method="post">
+    {% csrf_token %}
+        <select name="status" id="status">
+            <option value="C">Completed</option>
+            <option value="I">In Progress</option>
+            <option value="N">Not Completed</option>
+        </select>
+    <input type="hidden" value="{{ action.id }}" name="action_id">
+    <input type="submit" value="submit">
+
+    </form>
+
+{% endblock %}

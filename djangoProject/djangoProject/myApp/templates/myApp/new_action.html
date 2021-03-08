@@ -1,0 +1,16 @@
+{% extends 'myApp/base.html' %}
+
+{% block content %}
+<form action="{% url 'new_action' %}" method="POST">
+    {% csrf_token %}
+    <input type="text" name="name">
+    <select name="status" id="status">
+        <option value = "C">Completed</option>
+        <option value = "I">In Progress</option>
+        <option value = "N">Not Completed</option>
+    </select>
+    <input type="submit" value="Submit">
+</form>
+
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'myApp/base.html' %}
+{% block content %}
+{% if completed_actions %}
+    {% for action in completed_actions%}
+        {{ action.name }}
+        {{ action.create_date }}
+        {{ action.status }}
+        <br>
+    {% endfor %}
+{% else %}
+    <p>The are no actions</p>
+{% endif %}
+{% endblock %}

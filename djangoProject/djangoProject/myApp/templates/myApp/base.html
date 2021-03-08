@@ -1,0 +1,22 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'myApp/style.css' %}">
+
+</head>
+<body>
+<header>
+    <a href="{%  url 'index' %}">Show all Actions</a>
+    <a href="{%  url 'completed' %}">Show completed Actions</a>
+    <a href="{% url 'new_action' %}">Add new task</a>
+
+</header>
+<br>
+{% block content %}{% endblock %}
+<br>
+</body>
+</html>
