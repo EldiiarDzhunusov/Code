@@ -1,19 +1,30 @@
+import java.io.*;
 import java.util.*;
 
 public class Draft {
     public static void main(String[] args) {
-        ArrayList<ArrayList<Integer>> arrayList = new ArrayList<>();
-        ArrayList<Integer> arrayList1 = new ArrayList<>();
-        arrayList1.add(12);
-        arrayList1.add(14);
-        arrayList.add(arrayList1);
-        for(ArrayList<Integer> x: arrayList){
-            System.out.println(x);
-        }
-        for (int i = 0; i < 10; i++) {
-            
-        }
+        System.out.println(longestValidParentheses("(()"));
+        System.out.println(longestValidParentheses(")()())"));
+        System.out.println(longestValidParentheses(""));
     }
-
-
+    public static int longestValidParentheses(String s) {
+        Stack<Integer> stack = new Stack<>();
+        int max = 0;
+        stack.push(-1);
+        for (int i = 0; i < s.length(); i++) {
+            if(s.charAt(i)=='('){
+                stack.push(i);
+            }
+            else{
+                stack.pop();
+                if(stack.isEmpty()){
+                    stack.push(i);
+                }
+                if(i-stack.peek()>max){
+                    max = i-stack.peek();
+                }
+            }
+        }
+        return max;
+    }
 }

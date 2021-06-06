@@ -10,6 +10,6 @@ class Action(models.Model):
              ,("N", "Not Completed"),
     ("I", "In Progress"),
     ]
-    status = models.CharField(max_length=1,choices = CHOICES, default="N");
+    status = models.CharField(max_length=1, choices=CHOICES, default="N");
 
 
