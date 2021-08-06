@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 //name should be Solution for a class
@@ -23,66 +24,97 @@ public class templateGoogle {
         }
     }
 
-    public static void merge(int arr[], int l, int m, int r)
-    {
-        //sort(arr, 0, arr.length - 1);
-        int n1 = m - l + 1;
-        int n2 = r - m;
-        int L[] = new int[n1];
-        int R[] = new int[n2];
-
-        for (int i = 0; i < n1; ++i)
-            L[i] = arr[l + i];
-        for (int j = 0; j < n2; ++j)
-            R[j] = arr[m + 1 + j];
-
-        int i = 0, j = 0;
-
-        int k = l;
-        while (i < n1 && j < n2) {
-            if (L[i] <= R[j]) {
-                arr[k] = L[i];
-                i++;
-            }
-            else {
-                arr[k] = R[j];
-                j++;
-            }
-            k++;
-        }
-
-        while (i < n1) {
-            arr[k] = L[i];
-            i++;
-            k++;
-        }
-
-        while (j < n2) {
-            arr[k] = R[j];
-            j++;
-            k++;
-        }
-    }
-
-    public static void sort(int arr[], int l, int r)
-    {
-        //sort(arr, 0, arr.length - 1);
-        //        Sort 2d
-//        Arrays.sort(array, Comparator.comparingDouble(o -> o[0]));
-        if (l < r) {
-            int m = (l + r) / 2;
-
-            sort(arr, l, m);
-            sort(arr, m + 1, r);
-
-            merge(arr, l, m, r);
-        }
-    }
     public static void swap(int[] arr, int i, int j){
         arr[i] = arr[i] ^ arr[j];
         arr[j] = arr[i] ^ arr[j];
         arr[i] = arr[i] ^ arr[j];
     }
+    static boolean isPrime(long n)
+    {
+        if(n==1)return false  ;
+        for(long i = 2L; i*i <= n ;i++){ if(n% i ==0){return false; } }
+        return true ;
+    }
+
+    static boolean isPrime(int n)
+    {
+        if(n==1)return false  ;
+        for(int i = 2; i*i <= n ;i++){ if(n% i ==0){return false ; } }
+        return true ;
+    }
+    public static int gcd(int a, int b )
+    {
+        if(b==0)return a ;else return gcd(b,a%b) ;
+    }
+
+    public static long gcd(long a, long b )
+    {
+        if(b==0)return a ;else return gcd(b,a%b) ;
+    }
+
+
+    static boolean isPower(int n, int p){
+        if(p==0) return n==1;
+        return (Double.compare(Math.pow(n,1.0/p),(int)Math.pow(n,1.0/p))==0);
+    }
+    static boolean isPower(long n, long p){
+        if(p==0L) return n==1L;
+        return (Double.compare(Math.pow(n,1.0/p),(long)Math.pow(n,1.0/p))==0);
+    }
+    public static long nCr(int n,int k) {
+        long ans=1L;
+        k=k>n-k?n-k:k;
+        int j=1;
+        for(;j<=k;j++,n--)
+        {
+            if(n%j==0)
+            {
+                ans*=n/j;
+            }else if(ans%j==0)
+            {
+                ans=ans/j*n;
+            }else
+            {
+                ans=(ans*n)/j;
+            }
+        }
+        return ans;
+    }
+
+    public static ArrayList<Integer> allFactors(int n)
+    {
+        ArrayList<Integer> list = new ArrayList<>() ;
+
+        for(int i = 1; i*i <= n ;i++)
+        {
+            if( n % i == 0)
+            {
+                if(i*i == n)list.add(i) ;
+                else{ list.add(i) ;list.add(n/i) ; }
+            }
+        }
+
+        return list ;
+    }
+
+
+    public static ArrayList<Long> allFactors(long n)
+    {
+        ArrayList<Long> list = new ArrayList<>() ;
+
+        for(long i = 1L; i*i <= n ;i++)
+        {
+            if( n % i == 0)
+            {
+                if(i*i == n) list.add(i) ;
+                else{  list.add(i) ; list.add(n/i) ; }
+
+            }
+        }
+
+        return list ;
+    }
+
     static class FastReader {
         BufferedReader br;
         StringTokenizer st;

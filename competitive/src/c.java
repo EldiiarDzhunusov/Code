@@ -2,97 +2,45 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.StringTokenizer;
 
-/*AUTHOR - ELDIIAR DZHUNUSOV */
-
+//name should be Solution for a class
 public class c {
-    static int mod= 1000000007 ;
     static final FastReader in = new FastReader();
     static final PrintWriter out = new PrintWriter(System.out);
-    static HashSet<Integer> citiesIncluded = new HashSet<>();
     public static void main(String[] args) {
-        long t = 1;
+        long t =1;
         for (long i = 1; i <= t; i++) {
             new Solver();
         }
-        out.flush();
         out.close();
-
     }
     static class Solver{
         Solver(){
             //insert your code here
-            // Ошибки в логике, 1) моя дорога не двух сторонняя
-            // 2) может случиться бесконечный луп но это зависит от тест кейсов
-            // если все вертисы будут направлены на друг друга, тогда конец моей программе
-            // надо это проверить как нибудь
-            int cities = in.nextInt();
-            int n = in.nextInt();
-
-            int start = in.nextInt();
-            int destination = in.nextInt();
-            int[][] arr = new int[n][2];
-            for (int i = 0; i < n; i++) {
-                arr[i][0] = in.nextInt();
-                arr[i][1] = in.nextInt();
+            int n =in.nextInt();
+            int n1 = n;
+            int k =in.nextInt();
+            int m=in.nextInt();
+            int ans= 0;
+            //breaks for 1 1 200
+            if(m>k){
+                out.println(0);
+                return;
             }
-            Arrays.sort(arr, Comparator.comparingDouble(o -> o[0]));
-            int temp = arr[0][0];
-
-            HashMap<Integer,ArrayList<Integer>> hashMap = new HashMap<>();
-            ArrayList<Integer> temparray = new ArrayList<>();
-            temparray.add(arr[0][1]);
-            hashMap.put(arr[0][0],temparray);
-            for (int i = 1; i < arr.length; i++) {
-                if(arr[i][0]==temp){
-                    ArrayList<Integer> arrayList = hashMap.get(arr[i][0]);
-                    arrayList.add(arr[i][1]);
-                }
-                else{
-                    temp=arr[i][0];
-                    ArrayList<Integer> arrayTemp = new ArrayList<>();
-                    arrayTemp.add(arr[i][1]);
-                    hashMap.put(arr[i][0],arrayTemp);
-                }
+            while(n1>=k){
+                int zagotovki = n1/k;
+                n1-=(zagotovki*k);
+                //true before it
+                int DetailsPerZagotovka = k/m;
+                int details = zagotovki*DetailsPerZagotovka;
+                n1+=(zagotovki*k)-(m*details);
+                ans+=details;
             }
-//            out.println("HashMap: " + hashMap);
-            traverse(hashMap,start,destination,"");
-//            out.println("Set: " + citiesIncluded);
-            out.println(cities-citiesIncluded.size());
-
+            out.println(ans);
         }
     }
-    public static void traverse(HashMap<Integer,ArrayList<Integer>> hashMap, int city, int destination, String road){
-
-
-//        out.println("City I am in: " + city + " Destination: " + destination);
-        if(city==destination){
-            road+=" " + String.valueOf(destination);
-
-            String[] cities = road.trim().split(" ");
-            for (int i = 0; i < cities.length; i++) {
-                citiesIncluded.add(Integer.parseInt(cities[i]));
-            }
-            return;
-        }
-        if(!hashMap.containsKey(city)){
-            return;
-        }
-        else {
-            ArrayList<Integer> arrayList = hashMap.get(city);
-            for (int i = 0; i < arrayList.size(); i++) {
-                //            System.out.println(road);
-                traverse(hashMap, arrayList.get(i), destination, road + " " + city);
-            }
-        }
-    }
-
-//        Collections.sort(arrayList);
-//        sort 1d
-//        sort(arr, 0, arr.length - 1);
-//        Sort 2d by the first index
-//        Arrays.sort(arr, Comparator.comparingDouble(o -> o[0]));
 
     public static void swap(int[] arr, int i, int j){
         arr[i] = arr[i] ^ arr[j];

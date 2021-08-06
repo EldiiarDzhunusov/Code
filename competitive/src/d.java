@@ -11,35 +11,118 @@ public class d {
     static final FastReader in = new FastReader();
     static final PrintWriter out = new PrintWriter(System.out);
     public static void main(String[] args) {
-        new Solver();
+        long t = in.nextLong();
+        for (long i = 1; i <= t; i++) {
+            new Solver();
+        }
         out.flush();
         out.close();
+
     }
     static class Solver{
         Solver(){
-            int n = in.nextInt();
-            int p = in.nextInt();
-            int[] arr = new int[n]; //процент инфляции
-            int[] arr2 = new int[n+1]; //здесь я храню сколько денег в счету
-            int[] arr3 = new int[n+1]; //здесь я храню сколько денег стоят 100 рублей в 2006
-            int maxDiff = 0;
-            int maxDiffIndex = 0;
-            arr2[0] = 100;
-            arr3[0] = 100;
-            for (int i = 0; i < n; i++) {
-                arr[i] = in.nextInt();
-                arr2[i+1]+=arr2[i]+p;
-                arr3[i+1]+=arr3[i]+arr[i];
-                if(arr2[i+1]-arr3[i+1]>maxDiff){
-                    maxDiff= arr2[i+1]-arr3[i+1];
-                    maxDiffIndex = i+1;
-                }
+            //insert your code here
 
-            }
-            out.println(2006+maxDiffIndex);
         }
     }
 
+
+//        Collections.sort(arrayList);
+//        sort 1d
+//        sort(arr, 0, arr.length - 1);
+//        Sort 2d by the first index
+//        Arrays.sort(arr, Comparator.comparingDouble(o -> o[0]));
+
+    public static void swap(int[] arr, int i, int j){
+        arr[i] = arr[i] ^ arr[j];
+        arr[j] = arr[i] ^ arr[j];
+        arr[i] = arr[i] ^ arr[j];
+    }
+    static boolean isPrime(long n)
+    {
+        if(n==1)return false  ;
+        for(long i = 2L; i*i <= n ;i++){ if(n% i ==0){return false; } }
+        return true ;
+    }
+
+    static boolean isPrime(int n)
+    {
+        if(n==1)return false  ;
+        for(int i = 2; i*i <= n ;i++){ if(n% i ==0){return false ; } }
+        return true ;
+    }
+    public static int gcd(int a, int b )
+    {
+        if(b==0)return a ;else return gcd(b,a%b) ;
+    }
+
+    public static long gcd(long a, long b )
+    {
+        if(b==0)return a ;else return gcd(b,a%b) ;
+    }
+
+
+    static boolean isPower(int n, int p){
+        if(p==0) return n==1;
+        return (Double.compare(Math.pow(n,1.0/p),(int)Math.pow(n,1.0/p))==0);
+    }
+    static boolean isPower(long n, long p){
+        if(p==0L) return n==1L;
+        return (Double.compare(Math.pow(n,1.0/p),(long)Math.pow(n,1.0/p))==0);
+    }
+    public static long nCr(int n,int k) {
+        long ans=1L;
+        k=k>n-k?n-k:k;
+        int j=1;
+        for(;j<=k;j++,n--)
+        {
+            if(n%j==0)
+            {
+                ans*=n/j;
+            }else if(ans%j==0)
+            {
+                ans=ans/j*n;
+            }else
+            {
+                ans=(ans*n)/j;
+            }
+        }
+        return ans;
+    }
+
+    public static ArrayList<Integer> allFactors(int n)
+    {
+        ArrayList<Integer> list = new ArrayList<>() ;
+
+        for(int i = 1; i*i <= n ;i++)
+        {
+            if( n % i == 0)
+            {
+                if(i*i == n)list.add(i) ;
+                else{ list.add(i) ;list.add(n/i) ; }
+            }
+        }
+
+        return list ;
+    }
+
+
+    public static ArrayList<Long> allFactors(long n)
+    {
+        ArrayList<Long> list = new ArrayList<>() ;
+
+        for(long i = 1L; i*i <= n ;i++)
+        {
+            if( n % i == 0)
+            {
+                if(i*i == n) list.add(i) ;
+                else{  list.add(i) ; list.add(n/i) ; }
+
+            }
+        }
+
+        return list ;
+    }
 
     static class FastReader {
         BufferedReader br;

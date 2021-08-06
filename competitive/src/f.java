@@ -15,7 +15,9 @@ public class f {
         for (long i = 1; i <= t; i++) {
             new Solver();
         }
+        out.flush();
         out.close();
+
     }
     static class Solver{
         Solver(){

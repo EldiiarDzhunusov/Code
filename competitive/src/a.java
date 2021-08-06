@@ -11,121 +11,122 @@ public class a {
     static final FastReader in = new FastReader();
     static final PrintWriter out = new PrintWriter(System.out);
     public static void main(String[] args) {
-        new Solver();
+        long t = 1;
+        for (long i = 1; i <= t; i++) {
+            new Solver();
+        }
         out.flush();
         out.close();
 
     }
     static class Solver{
         Solver(){
-            int x = in.nextInt();
-            int y = in.nextInt();
-            /*
-            * Принцип решения в обеих задачах одинаковый,
-            * я сперва считаю количество внутренних чисел, после считаю количество (ну или наоборот)
-            * чисел на последнем слою либо прямоугольника либо треугольника
-            *  */
-            //part1
-            int layer = Math.max(Math.abs(x),Math.abs(y));
+            //insert your code here
+            int a = in.nextInt();
+            int b = in.nextInt();
+            int c = in.nextInt();
 
-            int number = 0;
-            //максимальное число внутри layer
-            for (int i = 1; i < layer ; i++) {
-                number+= 8*i;
-            }
-
-            boolean needed= true;
-            long ans = 0;
-            //прорабатываю каждую сторону последнего layer
-            for (int i = layer, j =-1*(layer-1); j <= layer; j++) {
-                ans++;
-                if(i==x && j ==y){
-                    needed = false;
-                    break;
-                }
-            }
-            if(needed){
-                for (int i = layer-1,j = layer; i > -layer; i--) {
-
-                    ans++;
-                    if(i==x && j ==y){
-                        needed = false;
-                        break;
-                    }
-                }
-            }
-            if(needed){
-                for(int i = -layer,j=layer; j>=-layer;j--){
-                    ans++;
-                    if(i==x && j ==y){
-                        needed = false;
-                        break;
-                    }
-                }
-            }
-            if(needed){
-                for(int i = (-layer)+1,j= -layer; i<=layer;i++){
-                    ans++;
-                    if(i==x && j ==y){
-                        needed = false;
-                        break;
-                    }
-                }
-            }
-
-            out.println(ans+number);
-
-            //part2
-            int n = in.nextInt();
-            int num = 0; //буду считать числа внутри треугольника
-            int triangle  = 0; // сколько внутренних треугольников
-            int power = 1;
-            while(num<n){
-                num+=(9*power);
-                power++;
-                triangle++;
-            }
-            num-=(9*(power-1));
-            num++;
-            x = (2*(triangle-1))+1; //координата X
-            y= -(triangle-1);  //координата y
-
-            //прорабатываю каждую сторону последнего layer
-            needed=true;
-            for (int i = 0; i <  (triangle * 3)-1; i++) {
-                if(num==n){
-                    needed=false;
-                    break;
-                }
-                num++;
-                x--;
-                y++;
-            }
-            if(needed){
-                for (int i = 0; i < triangle * 3; i++) {
-                    if(num==n){
-                        needed=false;
-                        break;
-                    }
-                    num++;
-                    y--;
-                }
-            }
-            if(needed){
-                for (int i = 0; i < triangle * 3; i++) {
-                    if(num==n){
-                        needed=false;
-                        break;
-                    }
-                    num++;
-                    x++;
-                }
-            }
-            out.println(x+" "+y);
 
         }
     }
 
+
+//        Collections.sort(arrayList);
+//        sort 1d
+//        sort(arr, 0, arr.length - 1);
+//        Sort 2d by the first index
+//        Arrays.sort(arr, Comparator.comparingDouble(o -> o[0]));
+
+    public static void swap(int[] arr, int i, int j){
+        arr[i] = arr[i] ^ arr[j];
+        arr[j] = arr[i] ^ arr[j];
+        arr[i] = arr[i] ^ arr[j];
+    }
+    static boolean isPrime(long n)
+    {
+        if(n==1)return false  ;
+        for(long i = 2L; i*i <= n ;i++){ if(n% i ==0){return false; } }
+        return true ;
+    }
+
+    static boolean isPrime(int n)
+    {
+        if(n==1)return false  ;
+        for(int i = 2; i*i <= n ;i++){ if(n% i ==0){return false ; } }
+        return true ;
+    }
+    public static int gcd(int a, int b )
+    {
+        if(b==0)return a ;else return gcd(b,a%b) ;
+    }
+
+    public static long gcd(long a, long b )
+    {
+        if(b==0)return a ;else return gcd(b,a%b) ;
+    }
+
+
+    static boolean isPower(int n, int p){
+        if(p==0) return n==1;
+        return (Double.compare(Math.pow(n,1.0/p),(int)Math.pow(n,1.0/p))==0);
+    }
+    static boolean isPower(long n, long p){
+        if(p==0L) return n==1L;
+        return (Double.compare(Math.pow(n,1.0/p),(long)Math.pow(n,1.0/p))==0);
+    }
+    public static long nCr(int n,int k) {
+        long ans=1L;
+        k=k>n-k?n-k:k;
+        int j=1;
+        for(;j<=k;j++,n--)
+        {
+            if(n%j==0)
+            {
+                ans*=n/j;
+            }else if(ans%j==0)
+            {
+                ans=ans/j*n;
+            }else
+            {
+                ans=(ans*n)/j;
+            }
+        }
+        return ans;
+    }
+
+    public static ArrayList<Integer> allFactors(int n)
+    {
+        ArrayList<Integer> list = new ArrayList<>() ;
+
+        for(int i = 1; i*i <= n ;i++)
+        {
+            if( n % i == 0)
+            {
+                if(i*i == n)list.add(i) ;
+                else{ list.add(i) ;list.add(n/i) ; }
+            }
+        }
+
+        return list ;
+    }
+
+
+    public static ArrayList<Long> allFactors(long n)
+    {
+        ArrayList<Long> list = new ArrayList<>() ;
+
+        for(long i = 1L; i*i <= n ;i++)
+        {
+            if( n % i == 0)
+            {
+                if(i*i == n) list.add(i) ;
+                else{  list.add(i) ; list.add(n/i) ; }
+
+            }
+        }
+
+        return list ;
+    }
 
     static class FastReader {
         BufferedReader br;

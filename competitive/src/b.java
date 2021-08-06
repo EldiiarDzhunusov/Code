@@ -11,75 +11,135 @@ public class b {
     static final FastReader in = new FastReader();
     static final PrintWriter out = new PrintWriter(System.out);
     public static void main(String[] args) {
-        new Solver();
+        long t = 1;
+        for (long i = 1; i <= t; i++) {
+            new Solver();
+        }
         out.flush();
         out.close();
 
     }
     static class Solver{
         Solver(){
-            int n = in.nextInt();
-            int t = in.nextInt();
-            String allCommands[][] = new String[t][];
-            for (int i = 0; i < t; i++) {
-                allCommands[i] = in.nextLine().split(" ");
+            int k1 = in.nextInt();
+            int m = in.nextInt();
+            int k2 = in.nextInt();
+            int p2 = in.nextInt();
+            int n2 = in.nextInt();
+
+            int roomPerFloor;
+            try {
+                roomPerFloor = (k2/((p2-1)*m +n2-1));
             }
-            Integer[] arr = new Integer[n]; //current
-            for (int i = 0; i < arr.length; i++) {
-                arr[i] = 0;
+            catch (Exception e){
+                roomPerFloor = 1;
             }
-            HashSet<Integer> revertSet = new HashSet<>();
-            HashMap<Integer,List<Integer>> revertMap = new HashMap<>();
-            for (int i = 0; i < t; i++) {
-                if(allCommands[i][0].toLowerCase(Locale.ROOT).equals("revert")){
-                    revertSet.add(Integer.parseInt(allCommands[i][1]));
-                }
-            }
-            int lastIndexOfReverseSet = 0;
-            for (int i = 0; i < t; i++) {
-                String[] command = allCommands[i];
-                if(revertSet.contains(i)){
-                    if(lastIndexOfReverseSet!=0){
-                        if(revertMap.get(lastIndexOfReverseSet).equals(arr)){
-                            revertMap.put(i,revertMap.get(lastIndexOfReverseSet));
-                        }
-                        else{
-                            revertMap.put(i,Arrays.asList(Arrays.copyOf(arr,n))); //check this place, it my be reference
-                            lastIndexOfReverseSet=i;
-                        }
-                    }
-                    else{
-                        revertMap.put(i,Arrays.asList(Arrays.copyOf(arr,n))); //check this place, it my be reference
-                        lastIndexOfReverseSet = i;
-                    }
-                 }
-                if(command[0].toLowerCase(Locale.ROOT).equals("set")){
-                    arr[Integer.parseInt(command[1])] = Integer.parseInt(command[2]);
-                }
-                else if(command[0].toLowerCase(Locale.ROOT).equals("get")){
-                    out.println(arr[Integer.parseInt(command[1])]);
-                }
-                else{
-                    arr = (revertMap.get(Integer.parseInt(command[1]))).toArray(new Integer[0]);
-                }
-            }
-//            out.println("SET: " + revertSet);
-//            out.println("MAP: " + revertMap);
-//            out.println("Indexes: " + lastIndexOfReverseSet);
-//            out.println("ARR" +  Arrays.toString(arr));
+            int floors = k1/roomPerFloor+1;
+            int podiezd = floors/m+1;
+            out.println(podiezd + " " + (floors-((podiezd-1)*m)));
+
 
         }
     }
-    public static void printArray2d(int[][] arr){
-        out.println("");
-        for (int i = 0; i < arr.length; i++) {
-            for (int i1 = 0; i1 < arr[i].length; i1++) {
-                out.print(arr[i][i1]+" ");
-            }
-            out.println("");
-        }
-        out.println("");
+
+
+//        Collections.sort(arrayList);
+//        sort 1d
+//        sort(arr, 0, arr.length - 1);
+//        Sort 2d by the first index
+//        Arrays.sort(arr, Comparator.comparingDouble(o -> o[0]));
+
+    public static void swap(int[] arr, int i, int j){
+        arr[i] = arr[i] ^ arr[j];
+        arr[j] = arr[i] ^ arr[j];
+        arr[i] = arr[i] ^ arr[j];
     }
+    static boolean isPrime(long n)
+    {
+        if(n==1)return false  ;
+        for(long i = 2L; i*i <= n ;i++){ if(n% i ==0){return false; } }
+        return true ;
+    }
+
+    static boolean isPrime(int n)
+    {
+        if(n==1)return false  ;
+        for(int i = 2; i*i <= n ;i++){ if(n% i ==0){return false ; } }
+        return true ;
+    }
+    public static int gcd(int a, int b )
+    {
+        if(b==0)return a ;else return gcd(b,a%b) ;
+    }
+
+    public static long gcd(long a, long b )
+    {
+        if(b==0)return a ;else return gcd(b,a%b) ;
+    }
+
+
+    static boolean isPower(int n, int p){
+        if(p==0) return n==1;
+        return (Double.compare(Math.pow(n,1.0/p),(int)Math.pow(n,1.0/p))==0);
+    }
+    static boolean isPower(long n, long p){
+        if(p==0L) return n==1L;
+        return (Double.compare(Math.pow(n,1.0/p),(long)Math.pow(n,1.0/p))==0);
+    }
+    public static long nCr(int n,int k) {
+        long ans=1L;
+        k=k>n-k?n-k:k;
+        int j=1;
+        for(;j<=k;j++,n--)
+        {
+            if(n%j==0)
+            {
+                ans*=n/j;
+            }else if(ans%j==0)
+            {
+                ans=ans/j*n;
+            }else
+            {
+                ans=(ans*n)/j;
+            }
+        }
+        return ans;
+    }
+
+    public static ArrayList<Integer> allFactors(int n)
+    {
+        ArrayList<Integer> list = new ArrayList<>() ;
+
+        for(int i = 1; i*i <= n ;i++)
+        {
+            if( n % i == 0)
+            {
+                if(i*i == n)list.add(i) ;
+                else{ list.add(i) ;list.add(n/i) ; }
+            }
+        }
+
+        return list ;
+    }
+
+
+    public static ArrayList<Long> allFactors(long n)
+    {
+        ArrayList<Long> list = new ArrayList<>() ;
+
+        for(long i = 1L; i*i <= n ;i++)
+        {
+            if( n % i == 0)
+            {
+                if(i*i == n) list.add(i) ;
+                else{  list.add(i) ; list.add(n/i) ; }
+
+            }
+        }
+
+        return list ;
+    }
+
     static class FastReader {
         BufferedReader br;
         StringTokenizer st;

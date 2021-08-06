@@ -11,7 +11,7 @@ public class e {
     static final FastReader in = new FastReader();
     static final PrintWriter out = new PrintWriter(System.out);
     public static void main(String[] args) {
-        long t = 1;
+        long t = in.nextLong();
         for (long i = 1; i <= t; i++) {
             new Solver();
         }
@@ -20,103 +20,47 @@ public class e {
 
     }
     static class Solver{
-        //my sort does not work
-        Solver() {
-            int n = in.nextInt();
-            int m = in.nextInt();
-            int l = in.nextInt();
-            String[][] names = new String[n][5];
-            for (int i = 0; i < n; i++) {
-                names[i][0] = in.next();
-                names[i][1] = in.next();
-                names[i][2] = in.next();
-                names[i][3] = in.next();
-                names[i][4] = Double.toString(i);
-            }
-
-//            long time1 = System.nanoTime();
-            Arrays.sort(names, Comparator.comparing(a -> a[0]));
-//            out.println(Arrays.deepToString(names));
-            Arrays.sort(names, Comparator.comparing(o -> Double.valueOf(o[1])));
-//            out.println(Arrays.deepToString(names));
-            //checked till here, works as expected
-            boolean taken[] = new boolean[m+1];
-            if(l==1){
-                for (int i = 0; i < n; i++) {
-                    if(names[i][2].equals("1")){
-                        if(names[i][3].equals("-1")){
-                            names[i][2] = "0";
-                            continue;
-                        }
-                        if(Integer.parseInt(names[i][3])>m){
-                            // what if there is not enough 0? like not enough in the order
-                            names[i][3] = "-1";
-                        }
-                        else{
-                            taken[Integer.parseInt(names[i][3])] = true; //RE
-                        }
-                    }
-                }
-                int index1 = 1;
-                boolean limitNotReached = true;
-                for (int i = 0; i < n; i++) {
-                    if(names[i][2].equals("0")){
-                        if(!names[i][3].equals("0")){
-                            // а если m == N
-                            if(!limitNotReached){
-                                names[i][3] = "-1";
-                                continue;
-                            }
-                            while(taken[index1]){
-                                index1++;
-                                if(index1>m){
-                                    limitNotReached=false;
-                                    break;
-                                }
-                            }
-                            if(limitNotReached){
-                                names[i][3] = Integer.toString(index1);
-                                taken[index1] =true;
-                            }else{
-                                names[i][3] = "-1";
-                            }
-                        }
-
-                    }
-                }
-            }
-            //l==0
-            else{
-                int index = 0;
-                for (int i = 0; i < n; i++) {
-                    if(names[i][3].equals("-1")){
-                        names[i][2] = "0";
-                    }
-                    if(index>m){
-                        names[i][3] = "-1";
-                    }
-                    else if(!names[i][3].equals("0")){
-                        names[i][3] = String.valueOf(index);
-                        index++;
-                    }
-                }
-            }
-
-            //output not in correct order
-//            out.println(Arrays.toString(taken));
-            Arrays.sort(names, Comparator.comparing(o -> Double.valueOf(o[4])));
-            print(names,n);
-//            long time2 = System.nanoTime();
-//            long timeTaken = time2 - time1;
-//            System.out.println("Time taken " + timeTaken + " ns");
+        Solver(){
+            //insert your code here
 
         }
     }
-    static void print(String[][] names, int n){
-        for (int i = 0; i < n; i++) {
-            out.println(names[i][0] + " " +names[i][1] + " " + names[i][2] + " " + names[i][3]);
-        }
+
+
+//        Collections.sort(arrayList);
+//        sort 1d
+//        sort(arr, 0, arr.length - 1);
+//        Sort 2d by the first index
+//        Arrays.sort(arr, Comparator.comparingDouble(o -> o[0]));
+
+    public static void swap(int[] arr, int i, int j){
+        arr[i] = arr[i] ^ arr[j];
+        arr[j] = arr[i] ^ arr[j];
+        arr[i] = arr[i] ^ arr[j];
     }
+    static boolean isPrime(long n)
+    {
+        if(n==1)return false  ;
+        for(long i = 2L; i*i <= n ;i++){ if(n% i ==0){return false; } }
+        return true ;
+    }
+
+    static boolean isPrime(int n)
+    {
+        if(n==1)return false  ;
+        for(int i = 2; i*i <= n ;i++){ if(n% i ==0){return false ; } }
+        return true ;
+    }
+    public static int gcd(int a, int b )
+    {
+        if(b==0)return a ;else return gcd(b,a%b) ;
+    }
+
+    public static long gcd(long a, long b )
+    {
+        if(b==0)return a ;else return gcd(b,a%b) ;
+    }
+
 
     static boolean isPower(int n, int p){
         if(p==0) return n==1;
