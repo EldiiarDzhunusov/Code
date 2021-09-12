@@ -21,12 +21,50 @@ public class a {
     }
     static class Solver{
         Solver(){
-            //insert your code here
-            int a = in.nextInt();
-            int b = in.nextInt();
-            int c = in.nextInt();
+            int n = in.nextInt();
+            String[][] arr = new String[n][2];
+            for (int i = 0; i < arr.length; i++) {
+                arr[i] =in.nextLine().split(" ");
+            }
+            double min = 30;
+            double max = 4000;
+            for (int i = 1; i < arr.length; i++) {
+                double a = Double.parseDouble(arr[i-1][0]);
+                double b = Double.parseDouble(arr[i][0]);
+                double num = Math.abs(a-b)/2;
+                if(b>a){
+                    num+=a;
+                }
+                else{
+                    num+=b;
+                }
+                if(arr[i][1].equals("closer")){
+                    if(num>b){
+                        if(max>num){
+                            max = num;
+                        }
+                    }
+                    else{
+                        if(min<num){
+                            min = num;
+                        }
+                    }
+                }
+                else{
+                    if(num>a){
+                        if(max>num){
+                            max = num;
+                        }
+                    }
+                    else{
+                        if(min<num){
+                            min = num;
+                        }
+                    }
 
-
+                }
+            }
+            out.println(min+" " +max);
         }
     }
 
